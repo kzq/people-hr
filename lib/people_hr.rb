@@ -10,3 +10,4 @@ else
 end
 
 require_relative 'people_hr/client.rb'
+require_relative 'people_hr/services/employee.rb'

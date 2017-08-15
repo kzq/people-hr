@@ -1,4 +1,5 @@
 module PeopleHr
+  # A class for working with and talking to the API
   class Client
     attr_accessor :key
     
@@ -12,7 +13,7 @@ module PeopleHr
     
     # Access to employee service to make API calls 
     def employees
-      @employees ||= Service::Employee.new(@key)   
+      @employees ||= Services::Employee.new(@key)   
     end
        
   end
