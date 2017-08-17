@@ -1,3 +1,6 @@
+require 'faraday'
+require 'json'
+
 module PeopleHr
 end
 
@@ -9,5 +12,8 @@ else
   GoCardlessPro::VERSION = ''
 end
 
-require_relative 'people_hr/client.rb'
-require_relative 'people_hr/services/employee.rb'
+require_relative 'people_hr/client'
+require_relative 'people_hr/services/base_service'
+require_relative 'people_hr/resources/base_resource'
+require_relative 'people_hr/services/employee'
+require_relative 'people_hr/resources/employee'

@@ -1,11 +1,15 @@
 describe PeopleHr::Services::Employee do
+  let(:client) { PeopleHr::Client.new(key: 'SECRET_KEY') }
+    
   describe '#get' do
     let(:id) { 'PW179' }
+    
+    subject(:get_response) { client.employees.get(id) }
     
     context 'when there is an employee to return' do
       before do
         stub_url = '/Employee'
-        stub_request(:get, /api.peoplehr.net#{stub_url}/).to_return(
+        stub_request(:get, /api.peoplehr.net#{stub_url}?action=GetEmployeeDetailById&EmployeeId=PW1 /).to_return(
           body: {
             'customers' => {
               'address_line1' => 'address_line1-input',
