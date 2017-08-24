@@ -1,8 +1,6 @@
-# PeopleHr
+# PeopleHr Ruby Client
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/people_hr`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Integrate PeopleHr api within your application. 
 
 ## Installation
 
@@ -22,7 +20,21 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+	# Get Client
+    client   =  PeopleHr::Client.new(api_key: 'my_key')
+    
+    # Get Employee
+	employee = client.employees.get('employee_id')
+    
+    # Get Employee details
+    employee.name, employee.title, employee.address etc.
+    
+    # Create a new Employee
+    employee_data = { EmployeeId:"#{random_str}", Title:"Mr.", FirstName:"Abc", LastName:"Xyz",
+           Email:"email@yahoo.com", Gender:"Male", StartDate:"2017-01-01", DateOfBirth:"1987-01-02", JobRole:"Software Enginner",
+           JobRoleEffectiveDate:"2014-01-01", Location:"London", Department:"IT"
+        }
+	new_employee = client.employees.create(employee_data)
 
 ## Development
 

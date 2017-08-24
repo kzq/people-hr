@@ -3,7 +3,7 @@ load 'lib/people_hr.rb'
 
 puts "=========== Client"
 
-client = PeopleHr::Client.new(api_key: '0d295b5a-af2a-48a5-8c32-02a8e3d20946')
+client = PeopleHr::Client.new(api_key: 'my_key')
 
 puts "client.api_key = #{client.api_key}" 
 
